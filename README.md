@@ -22,3 +22,7 @@ A personal use latex package for highlight the mathematical logic in a text.
  - a better catalogation of sentences in mathematical sciences.
  - creation of modular text.
  - use of color to take advantage of the visual memory.
+
+
+## Wanted features:
+1. [ ] sistema di autolabel. Quando chiami il begin della senteces deve essergli attribuito subito un label per poter fare riferimenti.
