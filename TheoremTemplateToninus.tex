@@ -250,5 +250,29 @@
 
 \newmdenv[style=remarkstyle]{remark}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NotaBene (WIP)
+\newenvironment{NB}[1]
+    {
+		\begin{description}
+			\item[N.B. :]
+    }
+    { 
+		\end{description}    
+	}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Danger box (WIP).
+% It encapsulates a piece of text that needs revision
 
+\newenvironment{dangerbox}[1]
+    {	
+		
+		\danger
+		
+    }
+    { 
+		
+		 \danger
+		 
+	}
