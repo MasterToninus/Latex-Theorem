@@ -209,14 +209,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % EXAMPLE  (WIP)
 \mdfdefinestyle{examplestyle}{
-	linecolor=yellow,
-	middlelinewidth=1pt,
-	frametitlerule=true,
-	frametitle={Example:},	
-	skipabove=3pt,
+  	linecolor=yellow,
+   % frametitle={\textbf{Example:}\colorbox{white}{\space#1\space}},
+    innertopmargin=10pt,
+    frametitleaboveskip=-\ht\strutbox,
+    frametitlealignment=\center
 }
 
-\newmdenv[style=examplestyle]{example}
+\mdtheorem[style=examplestyle]{example}{Example: }
+
+% Fancy http://tex.stackexchange.com/questions/69148/how-to-insert-title-in-mdframed
 
 
 
@@ -264,15 +266,38 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Danger box (WIP).
 % It encapsulates a piece of text that needs revision
+% http://tex.stackexchange.com/questions/52023/mdframed-put-something-on-the-start-of-one-vertical-left-rule
 
-\newenvironment{dangerbox}[1]
-    {	
-		
-		\danger
-		
-    }
-    { 
-		
-		 \danger
-		 
-	}
+\definecolor{warningColor}{named}{red}
+\tikzset{
+  warningsymbol/.style={
+      rectangle,
+      draw=warningColor,
+      fill=white,
+      scale=1,
+      overlay}
+}
+
+\mdfdefinestyle{warning}{%
+ hidealllines=true,leftline=true,
+ skipabove=12,skipbelow=12pt,
+ innertopmargin=0.4em,%
+ innerbottommargin=0.4em,%
+ innerrightmargin=0.7em,%
+ rightmargin=0.7em,%
+ innerleftmargin=1.7em,%
+ leftmargin=0.7em,%
+ middlelinewidth=.2em,%
+ linecolor=warningColor,%
+ fontcolor=warningColor,%
+ firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$) 
+                           node[warningsymbol] {\danger};},%
+ secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$) 
+                           node[warningsymbol] {\danger};},%
+ middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$) 
+                           node[warningsymbol] {\danger};},%
+ singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$) 
+                           node[warningsymbol] {\danger};},%
+}
+
+\newmdenv[style=warning]{Warning}
