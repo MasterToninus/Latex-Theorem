@@ -4,6 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 %	Riferimento:
 %	http://www.dm.unibo.it/studenti/latex/tesi.php
+% http://tex.stackexchange.com/questions/45817/theorem-definition-lemma-problem-numbering
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
 
@@ -15,33 +16,12 @@
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{corollary}[thm]{Corollary}
-\newtheorem{lemma}[thm]{Lemma}
-\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
 
 
 
-
-
-
-\theoremstyle{remark}
-\newtheorem{oss}{Osservazione}
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Dimostrazione, Tratteggiato da appendere sotto la proposizione
-\newenvironment{proof}[1]
-    {
-		\proof
-    }
-    { 
-		\endproof
-	}
 
 
 
@@ -53,8 +33,14 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %NOTAZIONE   (WIP) (troppo non standard, nel plain deve diventare definizione base o testo semplice)
-\newtheorem{notationfix}{Definition}[chapter]
-
+%\newtheorem{notationfix}{Definition}[chapter]
+\newenvironment{notationfix}[1]
+    {
+		\begin{definition}
+    }
+    { 
+		\end{definition}
+	}
 
 
 
@@ -66,31 +52,31 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %TAKE AWAY MASSAGE (WIP)
-\newtheorem{TAM}{Remark}
+%\newtheorem{TAM}{Remark}
+\newenvironment{TAM}[1]
+    {
+		\begin{remark}
+    }
+    { 
+		\end{remark}
+	}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Observation (WIP)
-\newtheorem{observation}{Remark}
-
+%\newtheorem{observation}{Remark}
+\newenvironment{observation}[1]
+    {
+		\begin{remark}
+    }
+    { 
+		\end{remark}
+	}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % EXAMPLE  (WIP)
-\mdfdefinestyle{examplestyle}{
-  	linecolor=yellow,
-   % frametitle={\textbf{Example:}\colorbox{white}{\space#1\space}},
-    innertopmargin=10pt,
-    frametitleaboveskip=-\ht\strutbox,
-    frametitlealignment=\center
-}
-
-\mdtheorem[style=examplestyle]{example}{Example: }
-
-% Fancy http://tex.stackexchange.com/questions/69148/how-to-insert-title-in-mdframed
-
-
-
-
+\newtheorem{example}{Example}
 
 
 
@@ -105,10 +91,53 @@
 		\end{description}    
 	}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%con opzione per il tratteggio
+	\usepackage[framemethod=TikZ]{mdframed}  
+	\mdfdefinestyle{dotted}{ tikzsetting={ 
+		draw= white, 
+		dash pattern = on 3pt off 3pt 
+	}	}
+   
+
+
+
+ 	\usepackage{amssymb} 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Danger box (WIP).
 % It encapsulates a piece of text that needs revision
 % http://tex.stackexchange.com/questions/52023/mdframed-put-something-on-the-start-of-one-vertical-left-rule
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \definecolor{warningColor}{named}{red}
 \tikzset{
