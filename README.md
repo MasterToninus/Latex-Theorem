@@ -18,7 +18,7 @@ A personal use latex package for highlight the mathematical logic in a text.
 5. [ ] Trasform the ["input file"](Latex-Theorem/TheoremTemplateToninus.tex) protype in a latex package.
  - Implement the possibility of choosing between fancy-style / serious-style in the preamle as a \usepackage option.
 6. [ ] Transform the example file in a proper "package guide" in the latex-community style.
-7. [ ] Write a good prentation / motivation to encourage people to enrich this project.
+7. [ ] Write a good presentation / motivation to encourage people to enrich this project.
  - a better catalogation of sentences in mathematical sciences.
  - creation of modular text.
  - use of color to take advantage of the visual memory.
@@ -26,7 +26,7 @@ A personal use latex package for highlight the mathematical logic in a text.
 
 ## Wanted features:
 1. [ ] sistema di autolabel. Quando chiami il begin della senteces deve essergli attribuito subito un label per poter fare riferimenti.
-
+2. [ ] Creare dei riquadri di tipo condizionale (ad esempio dei warning) che siano visualizzabili solo se viene settata a true una flag nel preambolo (versione embrionale usata nella tesi)
 
 
 ## Missing sentences ideas:
