@@ -1,0 +1,64 @@
+%----------------------------------------------------------------------------------------------------------------------------------
+%
+%			Versione Pacchettizzata   Parti Comuni
+%			https://en.wikibooks.org/wiki/LaTeX/Creating_Packages
+%
+%----------------------------------------------------------------------------------------------------------------------------------
+
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ToninusTheorem_Common}[2015/10/01 Custom Package]
+\RequirePackage[framemethod=TikZ]{mdframed}  
+\RequirePackage{amssymb} 
+	%Per la warning box
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{calc}
+\RequirePackage{fourier-orns}
+
+
+%-----------------------------------------------------------------------------------------------------------------------------------------------
+%			Comandi in Comune
+%-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Danger box (WIP).
+% It encapsulates a piece of text that needs revision
+% http://tex.stackexchange.com/questions/52023/mdframed-put-something-on-the-start-of-one-vertical-left-rule
+	\usetikzlibrary{calc}
+
+\tikzset{
+  warningsymbol/.style={
+      rectangle,
+      draw=red,
+      fill=white,
+      scale=1,
+      overlay}
+}
+
+\mdfdefinestyle{warning}{%
+ hidealllines=true,leftline=true,
+ skipabove=12,skipbelow=12pt,
+ innertopmargin=0.4em,%
+ innerbottommargin=0.4em,%
+ innerrightmargin=0.7em,%
+ rightmargin=0.7em,%
+ innerleftmargin=1.7em,%
+ leftmargin=0.7em,%
+ middlelinewidth=.2em,%
+ linecolor=red,%
+ fontcolor=red,%
+ firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$) 
+                           node[warningsymbol] {\danger};},%
+ secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$) 
+                           node[warningsymbol] {\danger};},%
+ middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$) 
+                           node[warningsymbol] {\danger};},%
+ singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$) 
+                           node[warningsymbol] {\danger};},%
+}
+
+\newmdenv[style=warning]{Warning}
+	
+
+\endinput

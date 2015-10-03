@@ -1,0 +1,55 @@
+%----------------------------------------------------------------------------------------------------------------------------------
+%
+%			Versione Pacchettizzata 
+%			https://en.wikibooks.org/wiki/LaTeX/Creating_Packages
+%
+%----------------------------------------------------------------------------------------------------------------------------------
+
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ToninusTheorem}[2015/10/01 Custom Package]
+\RequirePackage[framemethod=TikZ]{mdframed}  
+\RequirePackage{amssymb} 
+
+%------------------------------------------------------------------------------
+% Versione Plain
+%-----------------------------------------------------------------------------
+\newif\if@plain@
+\DeclareOption{plain}{
+	%Trucco:
+	% La versione Plain richiede un pacchetto che non può essererichiamato all'interno di un opzione.
+	%uso questa opzione per mettere a true una flag. il corpo del testo lo metto dopo il processoption in un if
+	\@plain@true
+}
+
+
+%------------------------------------------------------------------------------
+% Versione Fancy
+%-----------------------------------------------------------------------------
+\newif\if@fancy@
+\DeclareOption{fancy}{
+	\@fancy@true
+}
+
+
+%------------------------------------------------------------------------------------------------------------------------------------------------
+%	\ExecuteOptions{fancy} %Opzione standard Non Ho ben capito come funzioni
+	\ProcessOptions %Termine biforcazioni
+	
+		
+%-----------------------------------------------------------------------------------------------------------------------------------------------
+%			Comandi in Comune
+%-----------------------------------------------------------------------------------------------------------------------------------------------
+\usepackage{ToninusTheorem_Common} 
+
+
+\if@plain@
+ 	\usepackage{ToninusTheorem_Plain}
+\fi
+
+\if@fancy@
+ 	\usepackage{ToninusTheorem_Fancy}
+\fi
+
+
+\endinput

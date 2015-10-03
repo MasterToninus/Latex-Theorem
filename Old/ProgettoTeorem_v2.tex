@@ -1,12 +1,11 @@
-\documentclass[a4paper,12pt]{report} 
+\documentclass[a4paper,12pt]{article}
 
 %Dummy text
 \usepackage{lipsum}
 
 
-
-\input{TheoremTemplateToninus_plain.tex}
-
+%\input{TheoremTemplateToninus.tex}
+\usepackage{ToninusTheorem}
 
 \begin{document}
 
@@ -18,7 +17,19 @@
 	Enunciato...
 Text Text Text Text Text Text $\sqrt{r}$ Text Text Text Text Text
 
-
+	\begin{hypothesis}
+		f tale che
+			\begin{enumerate}
+				\item 
+			\end{enumerate}
+	\end{hypothesis}
+	
+	\begin{thesis}
+		bubusettete
+			\begin{enumerate}
+				\item f bulla
+			\end{enumerate}
+	\end{thesis}
 
 \end{lemma}%
 
@@ -34,15 +45,44 @@ corollary
 proposition
 \end{proposition}%
 
+\begin{Lemma}[Distribution of inner products]\label{thm:stokesTheoremGeometricAlgebraII:1420}
+Given two blades $A_s, B_r$ with grades subject to $0 < r < s$, and a vector $b$, the inner product distributes according to
+\begin{equation}
+    A_s \cdot \left( b \wedge B_r \right) = \left( A_s \cdot b \right) \cdot B_r.
+\end{equation}
+
+	\begin{hypothesis}
+		f tale che
+			\begin{enumerate}
+				\item 
+			\end{enumerate}
+	\end{hypothesis}
+	
+	\begin{thesis}
+		bubusettete
+			\begin{enumerate}
+				\item f bulla
+			\end{enumerate}
+	\end{thesis}
+
+\end{Lemma}
+
 \begin{proof}
 ciao
 \end{proof}
-\proof
-CiaoCiao
-Ciao
-\lipsum[3]
-\endproof
 
+QUI FUNZIONA MALE!
+\begin{proposition}[Fiber Bundle as a Categoty.]
+	\begin{hypothesis}
+			\begin{itemize}
+				\item $\mathfrak{C} = $ set of all possible fiber bundle.
+				\item $hom(\mathfrak{C}) = $ set of all bundle morphism.
+			\end{itemize}
+	\end{hypothesis}
+	\begin{thesis}
+				The couple ( C, hom(C)) form a concrete category.
+	\end{thesis}
+\end{proposition}
 
 
 \begin{definition}[Bu]
@@ -54,7 +94,7 @@ bbbbbbbb
 \section{WiP}
 
 \begin{notationfix}
-Text
+Text'
 \end{notationfix}
 
 \begin{TAM}
@@ -111,8 +151,5 @@ Text
 
 \end{itemize}
 
-\begin{Warning}
-	Text
-\end{Warning}
 
 \end{document}
