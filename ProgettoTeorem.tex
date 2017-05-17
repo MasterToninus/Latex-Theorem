@@ -1,81 +1,28 @@
 \documentclass[a4paper,12pt]{article}
 
-%primo passo: creare un environment box personalizzato
-    \usepackage{framed}
-
-    \newenvironment{Teorema}%
-    {%
-    \begin{framed}
-      \textbf{\textsf{Teorema}}%\vspace*{2em}%
-    }
-    {%
-    \end{framed}%
-    }%
+%Dummy text
+\usepackage{lipsum}
 
 
-%Ipotesi con barra a sinistra
-    \newenvironment{Ipotesi}%
-    {%
-    \begin{leftbar}
-      \textbf{\textsf{Ipotesi}}
-    }
-    {%
-    \end{leftbar}%
-    }%
-  
 
-%Alternativa
-	\usepackage[framemethod=TikZ]{mdframed} %con opzione per il tratteggio
-  
-    \newenvironment{Teorema2}%
-    {%
-    \begin{mdframed}[linecolor=red]
-      \textbf{\textsf{Teorema}}%\vspace*{2em}%
-    }
-    {%
-    \end{mdframed}%
-    }%
-   
-\mdfdefinestyle{dotted}{ tikzsetting={ draw= white, dash pattern = on 3pt off 3pt } }
-   
- \usepackage{amssymb} 
-   
-    \newenvironment{Dimostrazione2}%
-    {%
-    \begin{mdframed}[style = dotted,linecolor=red,topline
-=false,frametitle={Dimostrazione}]
-    }
-    {%
-    	\begin{flushright}
-			$\square$
-		\end{flushright}
-    \end{mdframed}%
-    }%
-
-%Tesi con Barra a sinistra    
-    \newenvironment{Tesi2}%
-    {%
-    \begin{mdframed}[bottomline=false,rightline=false,linecolor=red,frametitle={Tesi:}]
-    }
-    {%
-    \end{mdframed}%
-    }%  
+\input{TheoremTemplateToninus.tex}
 
 
-%Alternativa
-
-    %definisco l'ambiente theorem
-	\newmdtheoremenv[linecolor=blue]{lemma}{Lemma}[section]
 
 
-    \newenvironment{Teorema3}%
-    {%
-    \begin{lemma}[di Pippo]
-    }
-    {%
-	 
-    \end{lemma}%
-    }%
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -87,81 +34,147 @@
 
 \begin{document}
 
-\section{Tentativo}
-Bo
-Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo Testo 
-\begin{Teorema}
-Enunciato...
 
-	\begin{Ipotesi}
-	f tale che
-		\begin{enumerate}
-		\item puzza
-		\end{enumerate}
-	\end{Ipotesi}
+\section{Approvati (MD THEOREM di base)}
+\lipsum[1]
 
-\end{Teorema}
-
-
-
-
-\section{Tentativo}
-
-\begin{Teorema2}
+\begin{lemma}[di coso]
 	Enunciato...
-	\begin{Ipotesi}
-	f tale che
-		\begin{enumerate}
-		\item puzza
-		\end{enumerate}
-	\end{Ipotesi}
+Text Text Text Text Text Text $\sqrt{r}$ Text Text Text Text Text
 
-	\begin{Tesi2}
-		\begin{enumerate}
-		\item f bulla
-		\end{enumerate}
-	\end{Tesi2}
+	\begin{hypothesis}
+		f tale che
+			\begin{enumerate}
+				\item 
+			\end{enumerate}
+	\end{hypothesis}
+	
+	\begin{thesis}
+		bubusettete
+			\begin{enumerate}
+				\item f bulla
+			\end{enumerate}
+	\end{thesis}
 
-\end{Teorema2}
+\end{lemma}%
 
-\begin{Dimostrazione2}
-	Dimostrazione...
+\begin{theorem}%
+teorema
+\end{theorem}%
 
-\end{Dimostrazione2}
+\begin{corollary}%
+corollary
+\end{corollary}%
 
-Va quasi bene.. ma:
+\begin{proposition}%
+proposition
+\end{proposition}%
+
+\begin{Lemma}[Distribution of inner products]\label{thm:stokesTheoremGeometricAlgebraII:1420}
+Given two blades $A_s, B_r$ with grades subject to $0 < r < s$, and a vector $b$, the inner product distributes according to
+\begin{equation}
+    A_s \cdot \left( b \wedge B_r \right) = \left( A_s \cdot b \right) \cdot B_r.
+\end{equation}
+
+	\begin{hypothesis}
+		f tale che
+			\begin{enumerate}
+				\item 
+			\end{enumerate}
+	\end{hypothesis}
+	
+	\begin{thesis}
+		bubusettete
+			\begin{enumerate}
+				\item f bulla
+			\end{enumerate}
+	\end{thesis}
+
+\end{Lemma}
+
+\begin{proof}
+ciao
+\end{proof}
+
+QUI FUNZIONA MALE!
+\begin{proposition}[Fiber Bundle as a Categoty.]
+	\begin{hypothesis}
+			\begin{itemize}
+				\item $\mathfrak{C} = $ set of all possible fiber bundle.
+				\item $hom(\mathfrak{C}) = $ set of all bundle morphism.
+			\end{itemize}
+	\end{hypothesis}
+	\begin{thesis}
+				The couple ( C, hom(C)) form a concrete category.
+	\end{thesis}
+\end{proposition}
+
+
+\begin{definition}[Bu]
+bbbb bbbbbb bbbbb bbbbb bbbbbbbbb bbbbb bbbb bbbbb bbbbbbbb bbbbbb bbbbbbbbbb bbbb bbbbb bbbbbb 
+bbbbbbbb
+\end{definition}
+
+
+\section{WiP}
+
+\begin{notationfix}
+Text'
+\end{notationfix}
+
+\begin{TAM}
+Text
+\end{TAM}
+
+\begin{example}
+Text
+\end{example}
+
+\begin{observation}
+Text
+\end{observation}
+
+\begin{remark}
+Text
+\end{remark}
+
+
+\section{List of all the sentences}
+
+\subsection{Sentence Matematica}
+
 \begin{itemize}
-\item la parte scrivibile dovrebbe essere piu' larga
-\item manca la numerazione dei teoremi!
-\item deve essere : carattere del testo di enunciato $\neq$ carattere testo ipotesi $\neq$ carattere testo tesi $\neq$ carattere testo dimostrazione
-\item le barrette che marcano le ipotesi devono essere separate
+ \item Preambolo
+ \item Definizione
+ \item Osservazione
+ \item Lemma
+ \item Teorema
+ \item Proposizione
+ \item Corollario
+ \item Fissare la notazione:
+ 	\\ Quando si da un nome particolare ad una piccola sottodefinizione oppure quando si attribuisce un simbolo a qualcosa
+ \item Esempio 	
+ \end{itemize}
+
+\subsection{Sentence Fisica}
+\begin{itemize}
+ \item assioma di matematizzazione 
+ 	\\(e.g. spazio-tempo = varietà 4D)
+ \item assioma come concetto primitivo 
+ 	\\(e.g. lo spazio fisico ha 3 dimensioni)
+ \item assioma di reinterpretazione 
+ 	\\(e.g. non mi viene in mente ora... è qualcosa che dopo tanti calcoli tiro fuori e gli appioppo una qualche interpretazione fisica)
+ \item giustificazione assioma 
+ 	\\L'assioma è qualcosa che non si può dimostrare ma tendenzialmente si può dare un argomento che cerca di giustificare il fatto che viene usato.. eg. l'omogeneità nello spazio-tempo presa per vera nei modelli FRW.
+ \item Conferma sperimentale
+ 	\\ si mette qua dentro la reference a qualche espiremento che avvalora gli assiomi o altro
+ \item Informazioni sul contesto.
+ 	\\ esempio, studio proteine, in questo contesto gli ordini di grandezza sono ...
+ \item Postulato
+ 	\\Ci sono differenze tra postulato e assioma... assioma= verità autoevidente, postulato= affermazione assunta vera
+
 
 \end{itemize}
-
-\newpage
-\section{Tentativo com md theorem}
-
-\begin{Teorema3}
-	Enunciato...
-	\begin{Ipotesi}
-	f tale che
-		\begin{enumerate}
-		\item puzza
-		\end{enumerate}
-	\end{Ipotesi}
-
-	\begin{Tesi2}
-		\begin{enumerate}
-		\item f bulla
-		\end{enumerate}
-	\end{Tesi2}
-
-\end{Teorema3}
-
-\begin{Dimostrazione2}
-	T' piacess.
-
-\end{Dimostrazione2}
 
 
 \end{document}
